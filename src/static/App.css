@@ -2,11 +2,10 @@
     color: #fff;
     background-image: url(./walls.jpg);
     background-repeat: repeat;
+    -webkit-background-size: 20% auto;
+    -moz-background-size: 20% auto;
+    -o-background-size: 20% auto;
     background-size: 20% auto;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
 }
 
 input {

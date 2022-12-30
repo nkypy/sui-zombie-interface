@@ -64,10 +64,11 @@ export const Home = () => {
                                 <Grid.Container gap={1} justify="flex-start">
                                     {zombies.map((obj) => (
                                         <Grid key={obj.details.data.fields.id.id} xs={4}>
-                                            <Card width="200px" className="zombie-grid-card">
+                                            <Card width="200px" className="zombie-grid-card zombie-parts head-visible- eye-visible- shirt-visible-" id="zombie-parts">
                                                 <Popover trigger="hover" placement='right' content={() => (<><div>Name: {obj.details.data.fields.name}</div><div>DNA: {obj.details.data.fields.dna}</div></>)}>
                                                     <Link to={"/zombie/" + obj.details.data.fields.id.id}>
                                                         <Image src={tester_bg} width="200px" draggable={false} />
+                                                        <img className="shirt shirt-part-5" src="/zombieparts/shirt-5@2x.png" />
                                                     </Link>
                                                 </Popover>
                                             </Card>
