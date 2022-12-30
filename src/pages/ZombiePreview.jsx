@@ -1,10 +1,12 @@
-import { useParams, useOutletContext } from 'react-router-dom';
+import { useParams, useOutletContext, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import { useToasts } from '@geist-ui/core'
 
 export const ZombiePreview = () => {
     const [wallet, provider] = useOutletContext();
     let { id } = useParams();
+
+    const navigate = useNavigate();
 
     const { setToast } = useToasts()
 
@@ -18,10 +20,7 @@ export const ZombiePreview = () => {
                 if (response.status == "Exists") {
                     setZombie(response);
                 } else {
-                    setToast({
-                        text: "僵尸不存在",
-                        type: 'error',
-                    })
+                    navigate("/404")
                 }
             }).catch((err) => {
                 setToast({
